@@ -21,222 +21,218 @@ struct node * perpre;
 void create_ll()
 {
     int num;
-cout<<"enter the number of elements "<<endl;
-cin>>num;
-cout<<"enter "<<num<<" elements";
-while(num>0)
-{
-      if(head==NULL)
+    cout << "enter the number of elements "<<endl;
+    cin >> num;
+    cout << "enter " << num << " elements";
+    while( num > 0)
     {
-
-       one=new node;
-        cin>>one->data;
-        one->link=NULL;
-        head=one;
-
-
-    }
-    else
-    {
-
-        temp=head;
-        while(temp->link!=NULL)
+        if(head == NULL)
         {
-            temp=temp->link;
-        }
-        struct node *n;
-        n=new node;
-        cin>>n->data;
-        n->link=NULL;
-        temp->link=n;
-    }
-    num--;
-}
 
-}
+            one = new node;
+            cin >> one -> data;
+            one -> link = NULL;
+            head = one;
+        }
+        else
+        {
+
+            temp = head;
+            while(temp -> link != NULL)
+            {
+                temp = temp -> link;
+            }
+            struct node *n;
+            n = new node;
+            cin >> n -> data;
+            n -> link = NULL;
+            temp -> link = n;
+        }    
+        num--;
+    }   
+
+}   
 
 
 
 //**********Function to insert a value in the Beginning**********
+
 void insert_beg()
 {
-if(head==NULL)
-{
-    cout<<"List is Empty";
-}
-else
-{
-n1=new node;
-cout<<"enter the value "<<endl;
-cin>>n1->data;
-n1->link=head;
-head=n1;
-}
+    if( head == NULL)
+    {
+        cout<<"List is Empty";
+    }
+    else
+    {
+        n1 = new node;
+        cout << "enter the value "<< endl;
+        cin >> n1 -> data;
+        n1 -> link = head;
+        head = n1;
+    }
 
 }
 
 
 //**********Function to insert a value in the end *****************
+ 
 void insert_end()
-    {
-     if(head==NULL)
-     {
-         cout<<"List is empty";
-     }
-     else
-     {
-
-temp=head;
-while(temp->link!=NULL)
 {
-    temp=temp->link;
-}
-n1=new node;
-cout<<"enter the number"<<endl;
-cin>>n1->data;
-temp->link=n1;
-n1->link=NULL;
-     }
+    if(head==NULL)
+    {
+        cout<<"List is empty";
     }
+    else
+    {
+
+        temp = head;
+        while(temp -> link != NULL)
+        {
+        temp = temp -> link;
+        }
+        n1 = new node;
+        cout << "enter the number" << endl;
+        cin >> n1 -> data;
+        temp -> link = n1;
+        n1 -> link = NULL;
+    }
+}
 
 
 //************Function to add an element before a number
+
 void add_before()
 {
     if(head==NULL)
-{
-    cout<<"List is Empty";
-}
-else
-{
-    int num,flag=0;
-temp=head;
-cout<<"enter the element before which element is inserted "<<endl;
-cin>>num;
-while(temp->data!=num)
-{
-   one=temp;
-   temp=temp->link;
-   if(temp->link==NULL)
-   {
+    {
+        cout<<"List is Empty";
+    }
+    else
+    {
+        int num,flag=0;
+        temp = head;
+        cout << "enter the element before which element is inserted "<<endl;
+        cin >> num;
+        while( temp -> data != num)
+        {
+            one = temp;
+            temp = temp -> link;
+            if(temp -> link == NULL)
+            {
 
-if(temp->data==num)
-{
-    goto add;
-}
-else
-{
-   cout<<"**************Please enter a valid number**************"<<endl<<endl;
-   flag=1;
-   break;
-}
+                if(temp -> data == num)
+                {
+                    goto add;
+                }
+                else
+                {
+                    cout << "**************Please enter a valid number**************"<<endl<<endl;
+                    flag = 1;
+                    break;
+                }
 
-
-
-   }
-}
-if(flag==0)
-{
-    add: n1=new node;
-    cout<<"enter the value to insert";
-    cin>>n1->data;
-    n1->link=temp;
-    one->link=n1;
-}
-
-
-
-}
+            }
+        }   
+        if(flag == 0)
+        {
+            add: n1 = new node;
+            cout << "enter the value to insert";
+            cin >> n1 -> data;
+            n1 -> link = temp;
+            one -> link = n1;
+        }
+    }
 }
 
  //**************Function to add an element after a value****************
+
 void add_after()
 {
-    if(head==NULL)
+    if(head == NULL)
     {
-        cout<<"list is empty";
-
+        cout << "list is empty";
     }
-    else{
-   int num,flag=0;
-temp=head;
-cout<<"enter the element after which element is inserted "<<endl;
-cin>>num;
-while(temp->data!=num)
-{
+    else
+    {
+        int num, flag = 0;
+        temp = head;
+        cout << "enter the element after which element is inserted "<<endl;
+        cin >> num;
+        while(temp -> data != num)
+        {
 
-   temp=temp->link;
-   if(temp->link==NULL)
-   {
-       if(temp->data==num)
-       {
-          goto add;
-       }
-       else
-       {
-           last: cout<<"**************Please enter a valid number************"<<endl<<endl;
-           flag=1;
-           break;
-       }
+            temp = temp -> link;
+            if(temp -> link == NULL)
+            {
+                if(temp->data==num)
+                {
+                    goto add;
+                }
+                else
+                {
+                    last: cout<<"**************Please enter a valid number************"<<endl<<endl;
+                    flag=1;
+                    break;
+                }
+            }  
+        }
 
-   }
-}
-if(flag==0)
-{
+        if(flag == 0)
+        {
 
-   add: n1=new node;
-    cout<<"enter the value to insert"<<endl;
-    cin>>n1->data;
-    n1->link=temp->link;
-    temp->link=n1;
-
-}
+            add: n1=new node;
+            cout << "enter the value to insert" << endl;
+            cin >> n1 -> data;
+            n1 -> link = temp -> link;
+            temp -> link = n1;
+        }
     }
 }
 
 
 //*********************Function to delete a value from the Beginning***********
+
 void delete_beg()
 {
-    if(head==NULL)
+    if(head == NULL)
     {
-        cout<<"list is empty";
+        cout << "list is empty";
 
     }
-else
+    else
     {
         temp=head;
-head=temp->link;
-cout<<"Node Deleted Successfully"<<endl<<endl;
+        head=temp->link;
+        cout << "Node Deleted Successfully"<<endl<<endl;
 free(temp);
     }
-
-
-
 
 }
 
 
 
 //************Function to delete A value from the end***************
+
 void delete_end()
 {
 
-    if(head==NULL)
+    if(head == NULL)
     {
-        cout<<"list is empty";
+        cout << "list is empty";
 
     }
-    else{
-         temp=head;
-while(temp->link!=NULL)
-{
-    one=temp;
-    temp=temp->link;
-}
-one->link=NULL;
-free(temp);
-cout<<"node deleted successfully"<<endl<<endl;
+    else
+    {
+        temp=head;
+        while(temp -> link != NULL)
+        {
+            one = temp;
+            temp = temp -> link;
+        }
+        one -> link = NULL;
+        free(temp);
+        cout << "node deleted successfully"<<endl<<endl;
     }
 
 }
@@ -245,6 +241,7 @@ cout<<"node deleted successfully"<<endl<<endl;
 
 
 //**********************Function to delete a specified value************
+
 void delete_node()
 {
     if(head==NULL)
@@ -375,26 +372,23 @@ void search_node()
 //***************Function to display the elements of Linked list*********************
 void display_ll()
 {
-    if(head==NULL)
+    if(head == NULL)
     {
-        cout<<"linked list is empty";
+        cout << "linked list is empty";
     }
     else
     {
-     cout<<"linked list is "<<endl;
-    if(head->link!=NULL)
-    {
-        temp=head;
-        while(temp!=NULL)
+        cout<<"linked list is "<<endl;
+        if(head -> link != NULL)
         {
-            cout<<temp->data<<" ";
-            temp=temp->link;
-
-
-        }
-
-
-    }
+            temp = head;
+            while(temp != NULL)
+            {
+                cout << temp -> data << " ";
+                temp = temp -> link;
+            }
+ 
+        }   
     }
 
     cout<<endl<<endl<<endl;
@@ -406,7 +400,7 @@ void count()
 {
     temp=head;
     int c=0;
-    while(temp!=NULL)
+    while(temp != NULL)
     {
         temp=temp->link;
         c++;
@@ -623,7 +617,7 @@ int main()
 
         }
     }
-    while(choice !=0);
+    while(choice != 0);
     return 0;
 }
 
